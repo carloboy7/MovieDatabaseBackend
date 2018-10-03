@@ -1,30 +1,39 @@
 package restServer.handler;
 
 import dbal.repository.EquationRepository;
+import dbal.repository.SolutionRepository;
 import models.Equation;
 import models.Solution;
 import restServer.reply.Reply;
 import restServer.reply.Status;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class EquationHandler {
-    EquationRepository equationRepository = new EquationRepository();
+    SolutionRepository solutionRepository = new SolutionRepository();
 
-    public Reply getEquation(){
+    public Reply saveEquation(){
         Equation equation = new Equation();
         Solution solution = new Solution();
-        solution.setId(1);
+        Solution solution1 = new Solution();
+        solution1.setSolution("hoi 1");
         solution.setSolution("hoi");
-        ArrayList<Solution> solutions = new ArrayList<>();
-        solutions.add(solution);
-        equation.setId(2);
-        equation.setSolution(solutions);
         equation.setEquation("test");
-        equationRepository.save(equation);
+        solution.setEquation(equation);
+        solution1.setEquation(equation);
+        solutionRepository.save(solution);
+        solutionRepository.save(solution1);
 
 
         return new Reply(Status.OK, "Yippie");
 
+    }
+
+    public Reply findEquation(String equation) {
+        return new Reply(Status.OK, equation);
+    }
+
+    public Reply getRecommended(String entry) {
+        return new Reply(Status.OK, entry);
     }
 }

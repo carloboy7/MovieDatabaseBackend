@@ -1,8 +1,23 @@
 package models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "Solution")
 public class Solution {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Solution_ID", unique = true, nullable = false)
     int id;
+
+    @NotNull
     String solution;
+
+    @ManyToOne(cascade = {CascadeType.ALL, CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "equation_id")
+    Equation equation;
 
     public int getId() {
         return id;
@@ -18,5 +33,13 @@ public class Solution {
 
     public void setSolution(String solution) {
         this.solution = solution;
+    }
+
+    public Equation getEquation() {
+        return equation;
+    }
+
+    public void setEquation(Equation equation) {
+        this.equation = equation;
     }
 }

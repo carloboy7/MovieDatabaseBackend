@@ -1,11 +1,23 @@
 package models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
+@Entity
+@Table(name = "Equation")
 public class Equation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Equation_ID", unique = true, nullable = false)
     int id;
+
+    @NotNull
     String equation;
-    ArrayList<Solution> solution;
 
     public int getId() {
         return id;
@@ -23,11 +35,4 @@ public class Equation {
         this.equation = equation;
     }
 
-    public ArrayList<Solution> getSolution() {
-        return solution;
-    }
-
-    public void setSolution(ArrayList<Solution> solution) {
-        this.solution = solution;
-    }
 }
