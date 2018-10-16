@@ -19,7 +19,8 @@ import javax.ws.rs.core.*;
         public Response submit(String data) {
             Gson gson = new Gson();
             RequestEquation equation = gson.fromJson(data, RequestEquation.class);
-            Reply reply = equationHandler.saveEquation();
+            Reply reply = equationHandler.execEquation(equation);
+            System.out.println(reply.getMessage());
             return Response.status(reply.getStatus().getCode())
                     .entity(reply.getMessage()).build();
         }

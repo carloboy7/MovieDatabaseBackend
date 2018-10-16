@@ -10,7 +10,15 @@ public class RequestEquation {
         return equation;
     }
 
+    public void setEquation(String equation) {
+        this.equation = equation;
+    }
+
     public ArrayList<RequestSolution> getRequestSolutions() {
         return requestSolutions;
+    }
+
+    public void setRequestSolutions(ArrayList<RequestSolution> requestSolutions) {
+        this.requestSolutions = requestSolutions;
     }
 }

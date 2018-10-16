@@ -19,6 +19,9 @@ public class Equation {
     @NotNull
     String equation;
 
+    @OneToMany(mappedBy="equation", cascade = {CascadeType.ALL, CascadeType.MERGE, CascadeType.PERSIST})
+    private List<Solution> solutions;
+
     public int getId() {
         return id;
     }
@@ -35,4 +38,11 @@ public class Equation {
         this.equation = equation;
     }
 
+    public List<Solution> getSolutions() {
+        return solutions;
+    }
+
+    public void setSolutions(List<Solution> solutions) {
+        this.solutions = solutions;
+    }
 }

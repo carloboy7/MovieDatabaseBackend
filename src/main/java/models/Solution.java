@@ -15,8 +15,8 @@ public class Solution {
     @NotNull
     String solution;
 
-    @ManyToOne(cascade = {CascadeType.ALL, CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
-    @JoinColumn(name = "equation_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
     Equation equation;
 
     public int getId() {

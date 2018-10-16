@@ -14,7 +14,7 @@
     </database>
     <schema id="4" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2018-10-03.14:15:34.450</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-10-16.10:42:06.067</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -55,14 +55,14 @@
       <ObjectId>16393</ObjectId>
     </schema>
     <table id="17" parent="4" name="Equation">
-      <ObjectId>1765581328</ObjectId>
-      <CreatedTimestamp>2018-10-03.14:15:13.043</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-03.14:15:13.090</ModifiedTimestamp>
+      <ObjectId>1909581841</ObjectId>
+      <CreatedTimestamp>2018-10-16.10:37:29.850</CreatedTimestamp>
+      <ModifiedTimestamp>2018-10-16.10:37:29.890</ModifiedTimestamp>
     </table>
     <table id="18" parent="4" name="Solution">
-      <ObjectId>1797581442</ObjectId>
-      <CreatedTimestamp>2018-10-03.14:15:13.067</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-03.14:15:13.090</ModifiedTimestamp>
+      <ObjectId>1941581955</ObjectId>
+      <CreatedTimestamp>2018-10-16.10:37:29.870</CreatedTimestamp>
+      <ModifiedTimestamp>2018-10-16.10:37:29.890</ModifiedTimestamp>
     </table>
     <column id="19" parent="17" name="Equation_ID">
       <Position>1</Position>
@@ -74,20 +74,20 @@
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="21" parent="17" name="PK__Equation__B2B6432448F2E3F5">
+    <index id="21" parent="17" name="PK__Equation__B2B6432482E6742D">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Equation_ID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="22" parent="17" name="PK__Equation__B2B6432448F2E3F5">
-      <ObjectId>1781581385</ObjectId>
+    <key id="22" parent="17" name="PK__Equation__B2B6432482E6742D">
+      <ObjectId>1925581898</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-10-03.14:15:13.043</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-03.14:15:13.043</ModifiedTimestamp>
+      <CreatedTimestamp>2018-10-16.10:37:29.850</CreatedTimestamp>
+      <ModifiedTimestamp>2018-10-16.10:37:29.850</ModifiedTimestamp>
       <ColNames>Equation_ID</ColNames>
-      <UnderlyingIndexName>PK__Equation__B2B6432448F2E3F5</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Equation__B2B6432482E6742D</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <column id="23" parent="18" name="Solution_ID">
@@ -100,35 +100,35 @@
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="25" parent="18" name="equation_id">
+    <column id="25" parent="18" name="equation_Equation_ID">
       <Position>3</Position>
       <DataType>int|0</DataType>
     </column>
-    <index id="26" parent="18" name="PK__Solution__DD9D5607D52C0113">
+    <index id="26" parent="18" name="PK__Solution__DD9D56073A6E226B">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Solution_ID</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="27" parent="18" name="PK__Solution__DD9D5607D52C0113">
-      <ObjectId>1813581499</ObjectId>
+    <key id="27" parent="18" name="PK__Solution__DD9D56073A6E226B">
+      <ObjectId>1957582012</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-10-03.14:15:13.067</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-03.14:15:13.067</ModifiedTimestamp>
+      <CreatedTimestamp>2018-10-16.10:37:29.870</CreatedTimestamp>
+      <ModifiedTimestamp>2018-10-16.10:37:29.870</ModifiedTimestamp>
       <ColNames>Solution_ID</ColNames>
-      <UnderlyingIndexName>PK__Solution__DD9D5607D52C0113</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Solution__DD9D56073A6E226B</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="28" parent="18" name="FK_pl1brnxhjiw24rljxsgs0oqox">
-      <ObjectId>1829581556</ObjectId>
-      <CreatedTimestamp>2018-10-03.14:15:13.090</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-03.14:15:13.090</ModifiedTimestamp>
-      <ColNames>equation_id</ColNames>
-      <RefTableId>1765581328</RefTableId>
+    <foreign-key id="28" parent="18" name="FK_b382emn0ake9nhst7bqs77lrs">
+      <ObjectId>1973582069</ObjectId>
+      <CreatedTimestamp>2018-10-16.10:37:29.890</CreatedTimestamp>
+      <ModifiedTimestamp>2018-10-16.10:37:29.890</ModifiedTimestamp>
+      <ColNames>equation_Equation_ID</ColNames>
+      <RefTableId>1909581841</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>Equation</RefTableName>
-      <RefKeyName>PK__Equation__B2B6432448F2E3F5</RefKeyName>
+      <RefKeyName>PK__Equation__B2B6432482E6742D</RefKeyName>
       <RefColNames>Equation_ID</RefColNames>
     </foreign-key>
   </database-model>
