@@ -7,6 +7,12 @@ import equationLogic.AccessLogic;
 import models.Equation;
 import models.LogicResult;
 import models.Solution;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.type.StandardBasicTypes;
 import restServer.reply.Reply;
 import restServer.reply.Status;
 import restServer.request.RequestEquation;
@@ -69,6 +75,15 @@ public class EquationHandler {
     }
 
     public Reply getRecommended(String entry) {
+
+        Session session = equationRepository.openSession();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select fieldA from tableA where fieldB like :searchKey");
+        String str = "";
+        Query query = session.createSQLQuery(sql.toString())
+                .addScalar("fieldA", StandardBasicTypes.STRING)
+                .setParameter("searchKey", "%" + str + "%");
+        List<String> results = query.list();
         return new Reply(Status.OK, entry);
     }
 }
