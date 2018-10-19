@@ -82,11 +82,13 @@ public class EquationHandler {
         query.setProjection(Projections.distinct(Projections.property("equation")));
         query.add(Restrictions.like("equation", entry, MatchMode.START));
         List queryResult = query.list();
-        ArrayList<String> resultList = new ArrayList<>();
+        ArrayList<RequestEquation> resultList = new ArrayList<>();
         for (Object result : queryResult) {
-            resultList.add((String) result);
+            RequestEquation equation = new RequestEquation();
+            equation.setEquation(((String) result));
+            resultList.add(equation);
         }
-        System.out.println(resultList);
-        return new Reply(Status.OK, resultList);
+        System.out.println(gson.toJson(resultList));
+        return new Reply(Status.OK, gson.toJson(resultList));
     }
 }
