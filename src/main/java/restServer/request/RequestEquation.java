@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class RequestEquation {
     String equation;
-    ArrayList<RequestSolution> requestSolutions= new ArrayList<>();
 
     public String getEquation() {
         return equation;
@@ -12,13 +11,5 @@ public class RequestEquation {
 
     public void setEquation(String equation) {
         this.equation = equation;
-    }
-
-    public ArrayList<RequestSolution> getRequestSolutions() {
-        return requestSolutions;
-    }
-
-    public void setRequestSolutions(ArrayList<RequestSolution> requestSolutions) {
-        this.requestSolutions = requestSolutions;
     }
 }

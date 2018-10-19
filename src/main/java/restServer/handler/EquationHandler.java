@@ -11,6 +11,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.type.StandardBasicTypes;
 import restServer.reply.Reply;
@@ -77,13 +78,15 @@ public class EquationHandler {
     public Reply getRecommended(String entry) {
 
         Session session = equationRepository.openSession();
-        StringBuilder sql = new StringBuilder();
-        sql.append("select fieldA from tableA where fieldB like :searchKey");
-        String str = "";
-        Query query = session.createSQLQuery(sql.toString())
-                .addScalar("fieldA", StandardBasicTypes.STRING)
-                .setParameter("searchKey", "%" + str + "%");
-        List<String> results = query.list();
-        return new Reply(Status.OK, entry);
+        Criteria query = session.createCriteria(Equation.class);
+        query.setProjection(Projections.distinct(Projections.property("equation")));
+        query.add(Restrictions.like("equation", entry, MatchMode.START));
+        List queryResult = query.list();
+        ArrayList<String> resultList = new ArrayList<>();
+        for (Object result : queryResult) {
+            resultList.add((String) result);
+        }
+        System.out.println(resultList);
+        return new Reply(Status.OK, resultList);
     }
 }
