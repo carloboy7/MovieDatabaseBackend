@@ -18,7 +18,7 @@ public class TestConnection {
     public static void main(String[] args) throws Exception {
         Gson gson = new Gson();
         RequestEquation equation = new RequestEquation();
-        equation.setEquation("2*x+2");
+        equation.setEquation("2+2");
         String payload = gson.toJson(equation);
 
         StringEntity entity = new StringEntity(payload,

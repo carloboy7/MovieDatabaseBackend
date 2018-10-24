@@ -22,6 +22,8 @@ import restServer.request.RequestSolution;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EquationHandler {
     private SolutionRepository solutionRepository = new SolutionRepository();
@@ -52,21 +54,33 @@ public class EquationHandler {
     }
 
     public Reply execEquation(RequestEquation equation){
+
+        final String regex = "^[0-9A-z]+([\\*\\\\\\+\\-][0-9A-z]+)+$";
+        final String string = equation.getEquation();
+
+        final Pattern pattern = Pattern.compile(regex);
+        final Matcher matcher = pattern.matcher(string);
+
         AccessLogic accessLogic = new AccessLogic();
         LogicResult result = new LogicResult();
-        try {
-            result = gson.fromJson(accessLogic.UseLogic(equation.getEquation()), LogicResult.class);
-            Equation equationResult = new Equation();
-            equationResult.setEquation(equation.getEquation());
-            equationRepository.save(equationResult);
-            for(String solution : result.getResults()){
-                Solution solutionResult = new Solution();
-                solutionResult.setEquation(equationResult);
-                solutionResult.setSolution(solution);
-                solutionRepository.save(solutionResult);
+
+        if (matcher.find()) {
+            try {
+                result = gson.fromJson(accessLogic.UseLogic(equation.getEquation()), LogicResult.class);
+                Equation equationResult = new Equation();
+                equationResult.setEquation(equation.getEquation());
+                equationRepository.save(equationResult);
+                for (String solution : result.getResults()) {
+                    Solution solutionResult = new Solution();
+                    solutionResult.setEquation(equationResult);
+                    solutionResult.setSolution(solution);
+                    solutionRepository.save(solutionResult);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } else {
+            return new Reply(Status.CONFLICT, "Invalid input");
         }
         return new Reply(Status.OK, result.getResults());
     }
