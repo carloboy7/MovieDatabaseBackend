@@ -34,8 +34,9 @@
         <property name="hbm2ddl.auto">update</property> <!--create or update-->
 
         <!-- The mapping information of entities -->
-        <mapping class="models.Equation"/>
-        <mapping class="models.Solution"/>
+        <mapping class="models.Movie"/>
+        <mapping class="models.Actor"/>
+        <mapping class="models.Genre"/>
 
 
 
