@@ -44,11 +44,11 @@ pipeline {
       //}
     }
 
-    stage('Deploy') {
+    stage('Create Image') {
        steps {
          sh 'chmod -R 777 .'
-         sh 'docker rm -f backend || true'
-         sh 'docker build -t backend .'
+         sh 'docker rm -f java_api || true'
+         sh 'docker build -t java_api .'
          sh 'docker image prune -f'
        }
      }
