@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6323d4d2-e321-4470-84bf-49bb1f0e8f9e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -152,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Jenkinsfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="394">
+              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -565,7 +564,7 @@
       <workItem from="1544654514125" duration="556000" />
       <workItem from="1544737011666" duration="80000" />
       <workItem from="1544737125034" duration="233000" />
-      <workItem from="1544737392080" duration="1945000" />
+      <workItem from="1544737392080" duration="2833000" />
     </task>
     <servers />
   </component>
@@ -581,10 +580,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76942000" />
+    <option name="totallyTimeSpent" value="77830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -790,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Jenkinsfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="394">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
         </state>
       </provider>
     </entry>
