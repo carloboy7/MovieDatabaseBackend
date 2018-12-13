@@ -28,14 +28,14 @@ pipeline {
     }
     stage('Build') {
       steps {
-          sh 'mvn package -DskipTests -f MovieDatabaseBackend/'
+          sh 'mvn package -DskipTests -f .'
           archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
       }
     }
 
     stage('Test') {
       steps {
-        sh 'mvn test -f MovieDatabaseBackend/'
+        sh 'mvn test -f .'
       }
       //post {
       //  always {
