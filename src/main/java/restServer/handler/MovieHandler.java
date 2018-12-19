@@ -68,4 +68,29 @@ public class MovieHandler {
         System.out.println(gson.toJson(resultList));
         return new Reply(Status.OK, gson.toJson(resultList));
     }
+
+    public Reply getAllActors() {
+        Session session = actorRepository.openSession();
+        List queryResult = session.createCriteria(Actor.class).list();;
+        ArrayList<Actor> resultList = new ArrayList<>();
+        for (Object result : queryResult) {
+            Actor actor = (Actor) result;
+            resultList.add(actor);
+        }
+        System.out.println(gson.toJson(resultList));
+        return new Reply(Status.OK, gson.toJson(resultList));
+    }
+
+    public Reply getAllGenres() {
+        Session session = genreRepository.openSession();
+        List queryResult = session.createCriteria(Genre.class).list();
+        ArrayList<Genre> resultList = new ArrayList<>();
+        for (Object result : queryResult) {
+            Genre genre = (Genre) result;
+            resultList.add(genre);
+        }
+        System.out.println(gson.toJson(resultList));
+        return new Reply(Status.OK, gson.toJson(resultList));
+    }
+
 }

@@ -34,4 +34,25 @@ public class EquationService {
                 .entity(reply.getMessage()).build();
     }
 
+    @GET
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Path("/actors")
+    public Response getActors(){
+
+        Reply reply = movieHandler.getAllActors();
+        return Response.status(reply.getStatus().getCode())
+                .entity(reply.getMessage()).build();
+    }
+
+    @GET
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Path("/genres")
+    public Response getGenres(){
+
+        Reply reply = movieHandler.getAllGenres();
+        return Response.status(reply.getStatus().getCode())
+                .entity(reply.getMessage()).build();
+    }
+
+
 }
